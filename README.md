@@ -41,10 +41,16 @@ The client is a browser and the client uses hypertext to display the seleted inf
 The skeleton is set up in HTML and the client uses hyper text to display diffrent elements of the page 
 
 home page
+
 ![wireframe](img/wireframe.png)
 
 seach by category page 
+
 ![wireframe](img/wireframe2.png)
+
+
 ##Stretch Elements
+
+If i have time to add more elements I want to add a feature where, when the user adds an element some radio buttons appear with some more choices which can be used to sort a more detailed analysis. Accomplished by adding another layer to the json object
 
 
