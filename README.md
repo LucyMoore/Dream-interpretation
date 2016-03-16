@@ -1,20 +1,20 @@
 # Dream-interpretation
 
-##Dream interpretation website, (Note: dream interpretation is complete tosh)
+###Dream interpretation website, (Note: dream interpretation is complete tosh)
 
-#Overview
+##Overview
 
 In the browser the user can enter a basic theme/element from their dream, into the text field and click the button, a related image will appear on the left of the page, and a short explaination of what they theme/element might represent in their dream.
 
-#Design outline
+##Design outline
 
 ![digram](img/diagram.jpg)
 
 The client takes user entered data from a browser set up, hands it over to the server.  The server then uses that data to perform operations on a database to retreive more data and then returns it to the client, the client then displays it to  a browser
 
-#Server
+##Server
 
-##Endpoints
+###Endpoints
 
 ####return dream analysis from a database (json file)
 
@@ -29,10 +29,22 @@ GET /dreams/catagory\
 
 select a catagorie of elements by letter and review the analysis
 
-#Client
+###APIs
+I will be using an API for an image site such as flickr, to import a picture to the browser when user input is found
 
-##Client - Server interaction
-The client is a browser and the client uses hypertext to display the seleted information to the browser
+##Client
 
-##GUI
-The skelton is set up in HTML and the client uses hyper text to display diffrent elements of the page 
+###Client - Server interaction
+The client is a browser and the client uses hypertext to display the seleted information to the browser. 
+
+###GUI
+The skeleton is set up in HTML and the client uses hyper text to display diffrent elements of the page 
+
+home page
+![wireframe](img/wireframe.png)
+
+seach by category page 
+![wireframe](img/wireframe2.png)
+##Stretch Elements
+
+
