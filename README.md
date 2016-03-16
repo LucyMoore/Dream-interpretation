@@ -12,11 +12,27 @@ In the browser the user can enter a basic theme/element from their dream, into t
 
 The client takes user entered data from a browser set up, hands it over to the server.  The server then uses that data to perform operations on a database to retreive more data and then returns it to the client, the client then displays it to  a browser
 
+#Server
+
 ##Endpoints
 
-#### return dream analysis from a database (json file)
+####return dream analysis from a database (json file)
 
 GET /dreams
 
 Using a query string obtained from the user input, the GET method will return a dream analysis stored in the json file 
 
+
+#### search catagories of dream elements
+
+GET /dreams/catagory\
+
+select a catagorie of elements by letter and review the analysis
+
+#Client
+
+##Client - Server interaction
+The client is a browser and the client uses hypertext to display the seleted information to the browser
+
+##GUI
+The skelton is set up in HTML and the client uses hyper text to display diffrent elements of the page 
