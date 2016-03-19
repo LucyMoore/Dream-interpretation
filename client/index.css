@@ -1,0 +1,19 @@
+body{
+  font-family: Arial;
+}
+
+div{
+  margin: 20px;
+  border: 1px solid black;
+}
+
+#title{
+  text-align: center;
+  background-image: url("img/Blue.jpg"); 
+}
+
+.elementHolder{
+  display: flex;
+  
+}
+
