@@ -9,6 +9,7 @@
     "fs": "0.0.2",
     "hyperscript": "^1.4.7",
     "jquery": "^2.2.2",
+    "superagent": "^1.8.1",
     "supertest": "^1.2.0",
     "tape": "^4.5.1",
     "watchify": "^3.7.0"

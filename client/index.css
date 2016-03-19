@@ -3,7 +3,7 @@ body{
 }
 
 div{
-  margin: 20px;
+  margin: 20px 10px;
   border: 1px solid black;
 }
 
@@ -15,5 +15,9 @@ div{
 .elementHolder{
   display: flex;
   
+}
+
+.textbox{
+  width: 300px
 }
 
