@@ -1,0 +1,288 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'slush',
+1 verbose cli   'slush-pages' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.1
+4 verbose install initial load of /usr/local/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/local/lib/package.json
+6 silly cache add args [ 'slush', null ]
+7 verbose cache add spec slush
+8 silly cache add args [ 'slush-pages', null ]
+9 verbose cache add spec slush-pages
+10 silly cache add parsed spec Result {
+10 silly cache add   raw: 'slush',
+10 silly cache add   scope: null,
+10 silly cache add   name: 'slush',
+10 silly cache add   rawSpec: '',
+10 silly cache add   spec: '*',
+10 silly cache add   type: 'range' }
+11 silly addNamed slush@*
+12 verbose addNamed "*" is a valid semver range for slush
+13 silly addNameRange { name: 'slush', range: '*', hasData: false }
+14 silly mapToRegistry name slush
+15 silly mapToRegistry using default registry
+16 silly mapToRegistry registry https://registry.npmjs.org/
+17 silly mapToRegistry uri https://registry.npmjs.org/slush
+18 verbose addNameRange registry:https://registry.npmjs.org/slush not in flight; fetching
+19 silly cache add parsed spec Result {
+19 silly cache add   raw: 'slush-pages',
+19 silly cache add   scope: null,
+19 silly cache add   name: 'slush-pages',
+19 silly cache add   rawSpec: '',
+19 silly cache add   spec: '*',
+19 silly cache add   type: 'range' }
+20 silly addNamed slush-pages@*
+21 verbose addNamed "*" is a valid semver range for slush-pages
+22 silly addNameRange { name: 'slush-pages', range: '*', hasData: false }
+23 silly mapToRegistry name slush-pages
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry uri https://registry.npmjs.org/slush-pages
+27 verbose addNameRange registry:https://registry.npmjs.org/slush-pages not in flight; fetching
+28 verbose request uri https://registry.npmjs.org/slush
+29 verbose request no auth needed
+30 info attempt registry request try #1 at 1:32:11 PM
+31 verbose request id 31801962bc0544bf
+32 verbose etag "BKPMM91YNWEI1PTJZ8W5KK9SN"
+33 http request GET https://registry.npmjs.org/slush
+34 verbose request uri https://registry.npmjs.org/slush-pages
+35 verbose request no auth needed
+36 info attempt registry request try #1 at 1:32:11 PM
+37 verbose etag "3LJ5MZZWQQSY7N506QAXDO5Y8"
+38 http request GET https://registry.npmjs.org/slush-pages
+39 http 304 https://registry.npmjs.org/slush
+40 verbose headers { date: 'Sat, 19 Mar 2016 00:32:11 GMT',
+40 verbose headers   via: '1.1 varnish',
+40 verbose headers   'cache-control': 'max-age=300',
+40 verbose headers   etag: '"BKPMM91YNWEI1PTJZ8W5KK9SN"',
+40 verbose headers   age: '142',
+40 verbose headers   connection: 'keep-alive',
+40 verbose headers   'x-served-by': 'cache-wlg7320-WLG',
+40 verbose headers   'x-cache': 'HIT',
+40 verbose headers   'x-cache-hits': '2',
+40 verbose headers   'x-timer': 'S1458347531.635035,VS0,VE0',
+40 verbose headers   vary: 'Accept' }
+41 silly get cb [ 304,
+41 silly get   { date: 'Sat, 19 Mar 2016 00:32:11 GMT',
+41 silly get     via: '1.1 varnish',
+41 silly get     'cache-control': 'max-age=300',
+41 silly get     etag: '"BKPMM91YNWEI1PTJZ8W5KK9SN"',
+41 silly get     age: '142',
+41 silly get     connection: 'keep-alive',
+41 silly get     'x-served-by': 'cache-wlg7320-WLG',
+41 silly get     'x-cache': 'HIT',
+41 silly get     'x-cache-hits': '2',
+41 silly get     'x-timer': 'S1458347531.635035,VS0,VE0',
+41 silly get     vary: 'Accept' } ]
+42 verbose etag https://registry.npmjs.org/slush from cache
+43 verbose get saving slush to /home/dev/.npm/registry.npmjs.org/slush/.cache.json
+44 silly addNameRange number 2 { name: 'slush', range: '*', hasData: true }
+45 silly addNameRange versions [ 'slush', [ '0.1.0', '1.0.0', '1.0.1', '1.1.1' ] ]
+46 silly addNamed slush@1.1.1
+47 verbose addNamed "1.1.1" is a plain semver version for slush
+48 silly cache afterAdd slush@1.1.1
+49 verbose afterAdd /home/dev/.npm/slush/1.1.1/package/package.json not in flight; writing
+50 verbose afterAdd /home/dev/.npm/slush/1.1.1/package/package.json written
+51 http 304 https://registry.npmjs.org/slush-pages
+52 verbose headers { date: 'Sat, 19 Mar 2016 00:32:11 GMT',
+52 verbose headers   via: '1.1 varnish',
+52 verbose headers   'cache-control': 'max-age=300',
+52 verbose headers   etag: '"3LJ5MZZWQQSY7N506QAXDO5Y8"',
+52 verbose headers   age: '0',
+52 verbose headers   connection: 'keep-alive',
+52 verbose headers   'x-served-by': 'cache-wlg7320-WLG',
+52 verbose headers   'x-cache': 'MISS',
+52 verbose headers   'x-cache-hits': '0',
+52 verbose headers   'x-timer': 'S1458347531.633820,VS0,VE751',
+52 verbose headers   vary: 'Accept' }
+53 silly get cb [ 304,
+53 silly get   { date: 'Sat, 19 Mar 2016 00:32:11 GMT',
+53 silly get     via: '1.1 varnish',
+53 silly get     'cache-control': 'max-age=300',
+53 silly get     etag: '"3LJ5MZZWQQSY7N506QAXDO5Y8"',
+53 silly get     age: '0',
+53 silly get     connection: 'keep-alive',
+53 silly get     'x-served-by': 'cache-wlg7320-WLG',
+53 silly get     'x-cache': 'MISS',
+53 silly get     'x-cache-hits': '0',
+53 silly get     'x-timer': 'S1458347531.633820,VS0,VE751',
+53 silly get     vary: 'Accept' } ]
+54 verbose etag https://registry.npmjs.org/slush-pages from cache
+55 verbose get saving slush-pages to /home/dev/.npm/registry.npmjs.org/slush-pages/.cache.json
+56 silly addNameRange number 2 { name: 'slush-pages', range: '*', hasData: true }
+57 silly addNameRange versions [ 'slush-pages',
+57 silly addNameRange   [ '1.0.0-pre',
+57 silly addNameRange     '1.0.0',
+57 silly addNameRange     '1.1.0',
+57 silly addNameRange     '1.2.0',
+57 silly addNameRange     '1.2.1',
+57 silly addNameRange     '1.3.0',
+57 silly addNameRange     '1.3.1',
+57 silly addNameRange     '1.3.2',
+57 silly addNameRange     '1.3.3',
+57 silly addNameRange     '1.3.4',
+57 silly addNameRange     '1.4.0',
+57 silly addNameRange     '1.4.1',
+57 silly addNameRange     '1.4.2' ] ]
+58 silly addNamed slush-pages@1.4.2
+59 verbose addNamed "1.4.2" is a plain semver version for slush-pages
+60 silly cache afterAdd slush-pages@1.4.2
+61 verbose afterAdd /home/dev/.npm/slush-pages/1.4.2/package/package.json not in flight; writing
+62 verbose afterAdd /home/dev/.npm/slush-pages/1.4.2/package/package.json written
+63 silly install resolved [ { name: 'slush',
+63 silly install resolved     description: 'The streaming scaffolding system - Gulp as a replacement for Yeoman',
+63 silly install resolved     version: '1.1.1',
+63 silly install resolved     homepage: 'http://slushjs.github.io',
+63 silly install resolved     repository: { type: 'git', url: 'git://github.com/slushjs/slush.git' },
+63 silly install resolved     author: { name: 'Joakim Bengtson', email: 'joakim@klei.se' },
+63 silly install resolved     preferGlobal: true,
+63 silly install resolved     keywords: [ 'scaffold', 'stream', 'project', 'init', 'tool', 'yeoman', 'gulp' ],
+63 silly install resolved     files: [ 'lib', 'bin' ],
+63 silly install resolved     bin: { slush: './bin/slush.js' },
+63 silly install resolved     dependencies:
+63 silly install resolved      { glob: '~4.0.0',
+63 silly install resolved        minimist: '~0.1.0',
+63 silly install resolved        'gulp-util': '^2.2.0',
+63 silly install resolved        'pretty-hrtime': '^0.2.0',
+63 silly install resolved        archy: '^0.0.2',
+63 silly install resolved        liftoff: '~0.10.0',
+63 silly install resolved        chalk: '^0.4.0' },
+63 silly install resolved     devDependencies:
+63 silly install resolved      { mocha: '^1.17.0',
+63 silly install resolved        should: '^3.1.0',
+63 silly install resolved        jshint: '^2.4.1',
+63 silly install resolved        'gulp-jshint': '^1.4.0',
+63 silly install resolved        gulp: '~3.6.2' },
+63 silly install resolved     scripts: { test: 'node gulpfile.js && NODE_ENV=test mocha --reporter spec' },
+63 silly install resolved     engineStrict: true,
+63 silly install resolved     engines: { node: '>= 0.9' },
+63 silly install resolved     licenses: [ [Object] ],
+63 silly install resolved     bugs: { url: 'https://github.com/slushjs/slush/issues' },
+63 silly install resolved     _id: 'slush@1.1.1',
+63 silly install resolved     dist:
+63 silly install resolved      { shasum: '69d9d9981e425fef60a15535f07c55e8b84aa537',
+63 silly install resolved        tarball: 'http://registry.npmjs.org/slush/-/slush-1.1.1.tgz' },
+63 silly install resolved     _from: 'slush@*',
+63 silly install resolved     _npmVersion: '1.3.17',
+63 silly install resolved     _npmUser: { name: 'joakimbeng', email: 'joakim@klei.se' },
+63 silly install resolved     maintainers: [ [Object] ],
+63 silly install resolved     directories: {},
+63 silly install resolved     _shasum: '69d9d9981e425fef60a15535f07c55e8b84aa537',
+63 silly install resolved     _resolved: 'https://registry.npmjs.org/slush/-/slush-1.1.1.tgz',
+63 silly install resolved     readme: 'ERROR: No README data found!' },
+63 silly install resolved   { name: 'slush-pages',
+63 silly install resolved     version: '1.4.2',
+63 silly install resolved     description: 'a slush generator for static pages using browserify',
+63 silly install resolved     main: 'slushfile.js',
+63 silly install resolved     scripts: { test: 'tape test' },
+63 silly install resolved     repository:
+63 silly install resolved      { type: 'git',
+63 silly install resolved        url: 'git+https://github.com/ahdinosaur/slush-pages.git' },
+63 silly install resolved     keywords:
+63 silly install resolved      [ 'slush',
+63 silly install resolved        'slushgenerator',
+63 silly install resolved        'generator',
+63 silly install resolved        'scaffold',
+63 silly install resolved        'pages',
+63 silly install resolved        'static',
+63 silly install resolved        'gh-pages',
+63 silly install resolved        'ghpages' ],
+63 silly install resolved     author: { name: 'ahdinosaur' },
+63 silly install resolved     license: 'ISC',
+63 silly install resolved     bugs: { url: 'https://github.com/ahdinosaur/slush-pages/issues' },
+63 silly install resolved     homepage: 'https://github.com/ahdinosaur/slush-pages',
+63 silly install resolved     dependencies:
+63 silly install resolved      { gulp: '^3.8.11',
+63 silly install resolved        'gulp-conflict': '^0.3.0',
+63 silly install resolved        'gulp-install': '^0.2.0',
+63 silly install resolved        'gulp-rename': '^1.2.2',
+63 silly install resolved        'gulp-template': '^3.0.0',
+63 silly install resolved        inquirer: '^0.8.0',
+63 silly install resolved        'osi-licenses': '^0.1.0' },
+63 silly install resolved     gitHead: 'f72b554a24bb186c8a319cd49836d8fc3d4bada8',
+63 silly install resolved     _id: 'slush-pages@1.4.2',
+63 silly install resolved     _shasum: '07d4e934af69cd31af0379292be4b90f69201b90',
+63 silly install resolved     _from: 'slush-pages@*',
+63 silly install resolved     _npmVersion: '3.3.8',
+63 silly install resolved     _nodeVersion: '4.2.1',
+63 silly install resolved     _npmUser: { name: 'ahdinosaur', email: 'michael.williams@enspiral.com' },
+63 silly install resolved     dist:
+63 silly install resolved      { shasum: '07d4e934af69cd31af0379292be4b90f69201b90',
+63 silly install resolved        tarball: 'http://registry.npmjs.org/slush-pages/-/slush-pages-1.4.2.tgz' },
+63 silly install resolved     maintainers: [ [Object] ],
+63 silly install resolved     directories: {},
+63 silly install resolved     _resolved: 'https://registry.npmjs.org/slush-pages/-/slush-pages-1.4.2.tgz',
+63 silly install resolved     readme: 'ERROR: No README data found!' } ]
+64 info install slush@1.1.1 into /usr/local/lib
+65 info install slush-pages@1.4.2 into /usr/local/lib
+66 info installOne slush@1.1.1
+67 verbose installOne of slush to /usr/local/lib not in flight; installing
+68 info installOne slush-pages@1.4.2
+69 verbose installOne of slush-pages to /usr/local/lib not in flight; installing
+70 verbose lock using /home/dev/.npm/_locks/slush-0a75f8466c10c4f2.lock for /usr/local/lib/node_modules/slush
+71 verbose lock using /home/dev/.npm/_locks/slush-pages-d98c1a08881b7bb3.lock for /usr/local/lib/node_modules/slush-pages
+72 silly install write writing slush 1.1.1 to /usr/local/lib/node_modules/slush
+73 silly install write writing slush-pages 1.4.2 to /usr/local/lib/node_modules/slush-pages
+74 verbose unbuild lib/node_modules/slush-pages
+75 verbose unbuild lib/node_modules/slush
+76 silly gentlyRm /usr/local/lib/node_modules/slush-pages is being purged from base /usr/local
+77 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/slush-pages
+78 silly gentlyRm /usr/local/lib/node_modules/slush is being purged from base /usr/local
+79 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/slush
+80 verbose tar unpack /home/dev/.npm/slush-pages/1.4.2/package.tgz
+81 verbose tar unpacking to /usr/local/lib/node_modules/slush-pages
+82 silly gentlyRm /usr/local/lib/node_modules/slush-pages is being purged
+83 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/slush-pages
+84 verbose tar unpack /home/dev/.npm/slush/1.1.1/package.tgz
+85 verbose tar unpacking to /usr/local/lib/node_modules/slush
+86 silly gentlyRm /usr/local/lib/node_modules/slush is being purged
+87 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/slush
+88 silly gunzTarPerm modes [ '775', '664' ]
+89 silly gunzTarPerm modes [ '775', '664' ]
+90 error tar.unpack untar error /home/dev/.npm/slush-pages/1.4.2/package.tgz
+91 error tar.unpack untar error /home/dev/.npm/slush/1.1.1/package.tgz
+92 verbose unlock done using /home/dev/.npm/_locks/slush-pages-d98c1a08881b7bb3.lock for /usr/local/lib/node_modules/slush-pages
+93 verbose unlock done using /home/dev/.npm/_locks/slush-0a75f8466c10c4f2.lock for /usr/local/lib/node_modules/slush
+94 verbose fstream_path /usr/local/lib/node_modules/slush-pages
+95 verbose fstream_type Directory
+96 verbose fstream_class DirWriter
+97 verbose stack Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/slush-pages'
+97 verbose stack     at Error (native)
+98 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25
+98 verbose fstream_stack /usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53
+98 verbose fstream_stack FSReqWrap.oncomplete (fs.js:82:15)
+99 verbose cwd /home/dev/Desktop/Lucy/Dream-interpretation
+100 error Linux 4.2.0-16-generic
+101 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "slush" "slush-pages"
+102 error node v4.2.1
+103 error npm  v2.14.7
+104 error path /usr/local/lib/node_modules/slush-pages
+105 error code EACCES
+106 error errno -13
+107 error syscall mkdir
+108 error Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/slush-pages'
+108 error     at Error (native)
+108 error  { [Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/slush-pages']
+108 error   errno: -13,
+108 error   code: 'EACCES',
+108 error   syscall: 'mkdir',
+108 error   path: '/usr/local/lib/node_modules/slush-pages',
+108 error   fstream_type: 'Directory',
+108 error   fstream_path: '/usr/local/lib/node_modules/slush-pages',
+108 error   fstream_class: 'DirWriter',
+108 error   fstream_stack:
+108 error    [ '/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25',
+108 error      '/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53',
+108 error      'FSReqWrap.oncomplete (fs.js:82:15)' ] }
+109 error Please try running this command again as root/Administrator.
+110 verbose exit [ -13, true ]
+111 verbose unbuild lib/node_modules/slush-pages
+112 silly gentlyRm /usr/local/lib/node_modules/slush-pages is being purged from base /usr/local
+113 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/slush-pages
+114 verbose unbuild lib/node_modules/slush
+115 silly gentlyRm /usr/local/lib/node_modules/slush is being purged from base /usr/local
+116 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/slush
