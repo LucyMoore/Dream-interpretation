@@ -1,6 +1,11 @@
 var express = require('express')
 var app = express();
 var fs = require('fs')
+var request = require('superagent')
+
+var dotenv = require('dotenv')
+
+dotenv.load()
 
 // set the port to run on
 app.set('port', 3000);
@@ -14,9 +19,25 @@ var port = server.address().port;
   console.log('running on ' + port);
 });
 
+//contact json 'database' read in object
 app.get('/api/v1/dreams', function(req,res){
   fs.readFile('DB.json','utf8', function(err, data){
-    console.log(data)
+    //console.log(data)
     res.json(JSON.parse(data))
   })
 })
+
+
+  app.get('/api/v1/images',function(req, result){ 
+    var query = req.query
+    var photos = {}
+    query['api_key'] = process.env.ACCESS_KEY
+    request
+      .get('https://api.flickr.com/services/rest/')
+      .query(query)
+      .end(function(err, res){
+         console.log(typeof res, '**')
+         photos = res
+    })
+        result.send(photos)
+  })

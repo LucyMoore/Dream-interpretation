@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "browserify": "^13.0.0",
+    "dotenv": "^2.0.0",
     "express": "^4.13.4",
     "fs": "0.0.2",
     "hyperscript": "^1.4.7",
