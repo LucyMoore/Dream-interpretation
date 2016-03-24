@@ -22,7 +22,6 @@ var port = server.address().port;
 //contact json 'database' read in object
 app.get('/api/v1/dreams', function(req,res){
   fs.readFile('DB.json','utf8', function(err, data){
-    console.log(data)
     res.json(JSON.parse(data))
   })
 })
@@ -35,7 +34,6 @@ app.get('/api/v1/dreams', function(req,res){
       .get('https://api.flickr.com/services/rest/')
       .query(query)
       .end(function(err, res){
-        console.log( res, '**')
         result.send(res)
     })
 

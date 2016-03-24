@@ -7,14 +7,13 @@ $(document).ready(function(){
 
   $('#elem1').blur(function(){
     var searchQuery = $('#elem1').val().toLowerCase();
-    console.log(searchQuery, 'searchQuery 9')
+    //console.log(searchQuery, 'searchQuery 9')
     getAnalysis(searchQuery, '#text1')
     getImage(searchQuery, '#img1')
   });
 
   $('#elem2').blur(function(){
     var searchQuery = $('#elem2').val().toLowerCase();
-    console.log(searchQuery, 'searchQuery 9')
     getAnalysis(searchQuery, '#text2')
     getImage(searchQuery, '#img2')
   });
@@ -40,9 +39,16 @@ $(document).ready(function(){
     .get('api/v1/images')
     .query({method: "flickr.photos.search", tags: tag, format: "json", nojsoncallback: 1})
     .end(function(err, res){
-      //var value = JSON.parse(res.text)
-      console.log(Object.keys(res), "val")
-      console.log("next", res.badRequest)
+      var response = JSON.parse(res.body.text)
+      var urlData= {
+        farm: response.photos.photo[0].farm,
+        server: response.photos.photo[0].server,
+        id: response.photos.photo[0].id,
+        secret: response.photos.photo[0].secret
+      }
+      var url = "//c"+urlData.farm+".staticflickr.com/"+urlData.server+"/"+urlData.id+"_"+urlData.secret+".jpg"
+      console.log('url',url)
+      $('#img1').attr('src', url)
     })
   }
 })
