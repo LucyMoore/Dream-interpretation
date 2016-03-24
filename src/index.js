@@ -30,11 +30,18 @@ $(document).ready(function(){
      .get('api/v1/dreams')
      .end(function(err, res){
       var value = JSON.parse(res.text)
+      if(value.dreams[search] === undefined){
+        $(returnTo).html("Sorry we dont have an anaylisis for that. <button id='requestBtn'> request? </button>")
+        // $('#requestBtn').click(function(){
+        //   makeRequest(search)
+        //   $('#requestBtn').attr('color', 'blue')
+        // })
+      }
       $(returnTo).html(value.dreams[search])
     });
   }
 
-  function getImage(tag){
+  function getImage(tag, returnTo){
     request
     .get('api/v1/images')
     .query({method: "flickr.photos.search", tags: tag, format: "json", nojsoncallback: 1})
@@ -47,8 +54,7 @@ $(document).ready(function(){
         secret: response.photos.photo[0].secret
       }
       var url = "//c"+urlData.farm+".staticflickr.com/"+urlData.server+"/"+urlData.id+"_"+urlData.secret+".jpg"
-      console.log('url',url)
-      $('#img1').attr('src', url)
+      $(returnTo).attr('src', url)
     })
   }
 })

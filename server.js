@@ -38,3 +38,7 @@ app.get('/api/v1/dreams', function(req,res){
     })
 
   })
+
+ // function makeRequest(temp){
+ //    fs.writeFile('requests.json', temp ,'utf8', )
+ //  }
