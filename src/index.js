@@ -4,23 +4,25 @@ var request = require('superagent')
 
 $(document).ready(function(){
 
-  // $('#elem1').blur(function(){
-  //   var searchQuery = $('#elem1').val().toLowerCase();
-  //   console.log(searchQuery, 'searchQuery 9')
-  //   getAnalysis(searchQuery, '#text1')
-  //   getImage(searchQuery)
-  // });
+
+  $('#elem1').blur(function(){
+    var searchQuery = $('#elem1').val().toLowerCase();
+    console.log(searchQuery, 'searchQuery 9')
+    getAnalysis(searchQuery, '#text1')
+    getImage(searchQuery, '#img1')
+  });
 
   $('#elem2').blur(function(){
     var searchQuery = $('#elem2').val().toLowerCase();
+    console.log(searchQuery, 'searchQuery 9')
     getAnalysis(searchQuery, '#text2')
-  //  getImage(searchQuery)
+    getImage(searchQuery, '#img2')
   });
 
   $('#elem3').blur(function(){
     var searchQuery = $('#elem3').val().toLowerCase();
     getAnalysis(searchQuery, '#text3')
-   // getImage(searchQuery)
+    getImage(searchQuery, '#img3')
   });
 
 
@@ -40,7 +42,6 @@ $(document).ready(function(){
     .end(function(err, res){
       //var value = JSON.parse(res.text)
       console.log(Object.keys(res), "val")
-      //why is the res.body empty?
       console.log("next", res.badRequest)
     })
   }
