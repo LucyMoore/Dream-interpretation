@@ -40,8 +40,8 @@ app.get('/api/v1/dreams', function(req,res){
 
 
 app.post('/api/v1/dreams',function(req, res){
-    console.log(res, '%%%')
-    fs.writeFile('requests.json','utf8', function(err, data){
+     console.log(Object.keys(res.req.params, 'test'))
+    fs.writeFile('requests.json', "heller",function(err, data){
     //res.json(JSON.parse(data))
     })
   })

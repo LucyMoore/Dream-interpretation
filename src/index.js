@@ -17,9 +17,8 @@ $(document).ready(function(){
     //send request to server endpoint to write request to file
     request
    .post('api/v1/dreams')
-   .send(textToSend)
+   .send('banana')
    .end(function(err,res){
-    console.log()
 
    })
 
