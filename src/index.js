@@ -4,43 +4,46 @@ var request = require('superagent')
 
 $(document).ready(function(){
 
+  $('.elem').blur(function() {
+    var num = (this.id).replace('elem', '')
+    var searchQuery = $('#elem'+num).val().toLowerCase();
+    getAnalysis(searchQuery, num)
+    getImage(searchQuery, '#img'+num)
+  })
 
-  $('#elem1').blur(function(){
-    var searchQuery = $('#elem1').val().toLowerCase();
-    //console.log(searchQuery, 'searchQuery 9')
-    getAnalysis(searchQuery, '#text1')
-    getImage(searchQuery, '#img1')
-  });
+  $('button').click(function() {
+    var num = $(this).closest("div").attr("id")
+    var textToSend = $('#elem' + num).val()
+    //send request to server endpoint to write request to file
+    request
+   .post('api/v1/dreams')
+   .send(textToSend)
+   .end(function(err,res){
+    console.log()
 
-  $('#elem2').blur(function(){
-    var searchQuery = $('#elem2').val().toLowerCase();
-    getAnalysis(searchQuery, '#text2')
-    getImage(searchQuery, '#img2')
-  });
+   })
 
-  $('#elem3').blur(function(){
-    var searchQuery = $('#elem3').val().toLowerCase();
-    getAnalysis(searchQuery, '#text3')
-    getImage(searchQuery, '#img3')
-  });
+  })
 
 
-  function getAnalysis(search, returnTo){
+
+//send request to server endpoint to return item from database
+  function getAnalysis(search, num){
+    var returnTo = '#text' + num
     request
      .get('api/v1/dreams')
      .end(function(err, res){
       var value = JSON.parse(res.text)
       if(value.dreams[search] === undefined){
-        $(returnTo).html("Sorry we dont have an anaylisis for that. <button id='requestBtn'> request? </button>")
-        // $('#requestBtn').click(function(){
-        //   makeRequest(search)
-        //   $('#requestBtn').attr('color', 'blue')
-        // })
+        $(returnTo).html("Sorry we dont have an analysis for that.<br> Click the request button and we will add this element to our database.")
+        $(' #' + num+ ' button').css('visibility', 'visible')
+
       }
       $(returnTo).html(value.dreams[search])
     });
   }
 
+//send request to server endpoint to return related image from flickr
   function getImage(tag, returnTo){
     request
     .get('api/v1/images')

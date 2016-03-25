@@ -36,9 +36,16 @@ app.get('/api/v1/dreams', function(req,res){
       .end(function(err, res){
         result.send(res)
     })
-
   })
 
- // function makeRequest(temp){
- //    fs.writeFile('requests.json', temp ,'utf8', )
- //  }
+
+app.post('/api/v1/dreams',function(req, res){
+    console.log(res, '%%%')
+    fs.writeFile('requests.json','utf8', function(err, data){
+    //res.json(JSON.parse(data))
+    })
+  })
+
+
+
+
