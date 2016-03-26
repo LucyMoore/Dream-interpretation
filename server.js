@@ -3,6 +3,7 @@ var app = express();
 var fs = require('fs')
 var bodyParser = require('body-parser')
 var request = require('superagent')
+var fileObject
 
 var dotenv = require('dotenv')
 
@@ -42,10 +43,16 @@ app.get('/api/v1/dreams', function(req,res){
   })
 
 
-app.post('/api/v1/dreams',function(req, res){
-     console.log(req, "test")
-    fs.writeFile('requests.json', "test", function(err, data){
-    //res.json(JSON.parse(data))
+  app.post('/api/v1/dreams',function(req, res){
+    var textToWrite = JSON.stringify(req.body.cat)
+    fs.readFile('requests.json', 'utf8', function(err, data){
+       fileObject = JSON.parse(data)
+      //fileObject.things.push(textToWrite)
+      console.log(fileObject, 'obj')
+
+    })
+    fs.writeFile('requests.json', "test" , function(err, data){
+    res.json(JSON.parse(data))
     })
   })
 

@@ -35,7 +35,7 @@ $(document).ready(function(){
     //send request to server endpoint to write request to file
     request
    .post('api/v1/dreams')
-   .send('{"data": textToSend}')
+   .send({cat: textToSend})
    .end(function(err,res){
 
    })
