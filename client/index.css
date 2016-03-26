@@ -4,12 +4,21 @@ body{
 
 div{
   margin: 20px 10px;
-  border: 1px solid black;
+}
+
+#main{
 }
 
 #title{
+  height: 180px; 
+  font-size: 20px;
+  padding-top: 10px;
   text-align: center;
   background-image: url("img/Blue.jpg");
+}
+a{
+  font-size: 15px;
+  color: black;
 }
 
 .elementHolder{
@@ -17,15 +26,15 @@ div{
 }
 
 .textbox{
-  width: 300px;
+  width: 600px;
   height: 100px;
   overflow-y: auto;
   padding: 2px;
 }
 
 img{
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   overflow: hidden;
 }
 

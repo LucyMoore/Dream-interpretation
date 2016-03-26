@@ -4,6 +4,7 @@
   "description": "###Dream interpretation website, (Note: dream interpretation is complete tosh)",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "browserify": "^13.0.0",
     "dotenv": "^2.0.0",
     "express": "^4.13.4",

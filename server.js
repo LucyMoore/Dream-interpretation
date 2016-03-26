@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express();
 var fs = require('fs')
+var bodyParser = require('body-parser')
 var request = require('superagent')
 
 var dotenv = require('dotenv')
@@ -9,6 +10,8 @@ dotenv.load()
 
 // set the port to run on
 app.set('port', 3000);
+
+app.use(bodyParser.json());
 
 //static folder
 app.use(express.static('client'))
@@ -40,8 +43,8 @@ app.get('/api/v1/dreams', function(req,res){
 
 
 app.post('/api/v1/dreams',function(req, res){
-     console.log(Object.keys(res.req.params, 'test'))
-    fs.writeFile('requests.json', "heller",function(err, data){
+     console.log(req, "test")
+    fs.writeFile('requests.json', "test", function(err, data){
     //res.json(JSON.parse(data))
     })
   })
