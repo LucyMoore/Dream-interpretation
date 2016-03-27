@@ -35,8 +35,9 @@ a{
 
 img{
   width: 150px;
-  height: 150px;
-  overflow: hidden;
+  height: 165px;
+  
+  object-fit: cover;
 }
 
 button{
