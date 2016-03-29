@@ -18,14 +18,15 @@ $(document).ready(function(){
     }
   })
   //not working
-  $(document).keypress(function(e){
-    if(e.keycode == 13){
-      var num = (this.id).replace('elem', '')
-      var searchQuery = $('#elem'+num).val().toLowerCase();
-      getAnalysis(searchQuery, num)
-      getImage(searchQuery, '#img'+num)
-    }
-  })
+  // $(document).keypress(function(e){
+  //   if(e.keycode == 13){
+  //     var num = (this.id).replace('elem', '')
+  //     var searchQuery = $('#elem'+num).val().toLowerCase();
+  //     getAnalysis(searchQuery, num)
+  //     getImage(searchQuery, '#img'+num)
+  //   }
+  // })
+  
   //request an analysis 
   $('button').click(function() {
     var num = $(this).parent().parent('div').attr('id');
@@ -45,6 +46,7 @@ function getAnalysis(search, num){
   var returnTo = '#text' + num
   request
     .get('api/v1/dreams')
+    .query({search})
     .end(function(err, res){
     var value = JSON.parse(res.text)
     if(value.dreams[search] === undefined){
