@@ -5,7 +5,7 @@ var bodyParser = require('body-parser')
 var request = require('superagent')
 var dotenv = require('dotenv')
 var sqlite = require('sqlite3');
-
+//one global variable
 var fileObject
 
 dotenv.load()
@@ -26,7 +26,6 @@ var port = server.address().port;
 });
 
 // set up database
-
 var knex = require('knex') ({
   client: 'sqlite3',
   connection: {
@@ -37,14 +36,17 @@ var knex = require('knex') ({
 
 var db = require('./DB/DB.js')(knex)
 
-//contact json 'database' read in object
+
+//contact sqlite3 database read in requested item
 app.get('/api/v1/dreams', function(req,res){
-  // fs.readFile('DB.json','utf8', function(err, data){
-  //   res.json(JSON.parse(data))
-  // })
-  console.log(req.query, 'res')
   db.getDbAnalysis('dreams', req.query, function(err, data){
-    //console.log(data, 'data')
+    res.json(data)
+  })
+})
+
+app.get('/api/v1/dreams/all', function(req, res){
+  db.getDbAll('dreams', function(err, data){
+    console.log(data)
   })
 })
 

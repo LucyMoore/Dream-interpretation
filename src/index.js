@@ -17,6 +17,7 @@ $(document).ready(function(){
       $('#' + num+ ' button').css('visibility', 'hidden')
     }
   })
+ 
   //not working
   // $(document).keypress(function(e){
   //   if(e.keycode == 13){
@@ -37,8 +38,7 @@ $(document).ready(function(){
      .post('api/v1/dreams')
      .send({request: textToSend})
      .end(function(err,res){
-
-      })
+    })
   })
 
 //send request to server endpoint to return item from database
@@ -48,17 +48,18 @@ function getAnalysis(search, num){
     .get('api/v1/dreams')
     .query({search})
     .end(function(err, res){
-    var value = JSON.parse(res.text)
-    if(value.dreams[search] === undefined){
-      $(returnTo).html("Sorry we dont have an analysis for that.<br> Click the request button and we will add this element to our database.")
-      $(' #' + num+ ' button').css('visibility', 'visible')
-    }
-    else{
-      $(returnTo).html(value.dreams[search])
-      $('#' + num+ ' button').css('visibility', 'hidden')
-
-    }
-  })//;
+      var dreamData = res.body[0]
+      console.log(dreamData,'res client')
+      //var value = res.body
+      if(dreamData === undefined){
+        $(returnTo).html("Sorry we dont have an analysis for that.<br> Click the request button and we will add this element to our database.")
+        $(' #' + num+ ' button').css('visibility', 'visible')
+      }
+      else{
+        $(returnTo).html(dreamData.analysis)
+        $('#' + num+ ' button').css('visibility', 'hidden')
+      }
+  })
 }
 
 //send request to server endpoint to return related image from flickr
