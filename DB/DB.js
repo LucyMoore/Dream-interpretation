@@ -9,6 +9,14 @@ module.exports = function (knex) {
       })
     },
 
+    getDbAll: function (callback){
+    	knex.raw('SELECT * FROM dreams')
+    	.then(function(resp){
+    		console.log(resp)
+    		callback(null, resp)
+    	})
+    }
+
   }
 }
 //[ 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']

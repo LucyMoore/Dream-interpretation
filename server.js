@@ -44,9 +44,10 @@ app.get('/api/v1/dreams', function(req,res){
   })
 })
 
+//search by alphabet instead = return whole database
 app.get('/api/v1/dreams/all', function(req, res){
-  db.getDbAll('dreams', function(err, data){
-    console.log(data)
+  db.getDbAll( function(err, data){
+    res.json(data)
   })
 })
 

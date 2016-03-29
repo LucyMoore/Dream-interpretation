@@ -41,6 +41,33 @@ $(document).ready(function(){
     })
   })
 
+   //search by aphabet
+$( "a" ).click(function( event ) {
+  event.preventDefault()
+  $('#display').children().remove()
+  $('#display').append($("<div id='alphabetContent'/>" ))
+    getAlphabet()
+})
+
+function getAlphabet(){
+  request
+  .get('api/v1/dreams/all')
+  .end(function(err, res){
+    var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    var response = res
+    var elementsArr =[]
+    var analysisArr = []
+    for(var i=0; i<res.body.length; i++){
+      elementsArr.push(res.body[i].element)
+      analysisArr.push(res.body[i].analysis)}
+    console.log(elementsArr, analysisArr)
+
+     for(var i=0; i<alphabet.length; i++)
+       $('#display').append('<h2>'+alphabet[i]+'</h2>')
+  })
+}
+
+
 //send request to server endpoint to return item from database
 function getAnalysis(search, num){
   var returnTo = '#text' + num
@@ -79,4 +106,7 @@ function getImage(tag, returnTo){
       $(returnTo).attr('src', url)
     })
   }
+
+
+    
 })
