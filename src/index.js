@@ -50,6 +50,9 @@ $( "a" ).click(function( event ) {
 })
 
 function getAlphabet(){
+  $('h3').html('search for elements alphabeticaly')
+  $('a').html('go back')
+
   request
   .get('api/v1/dreams/all')
   .end(function(err, res){
