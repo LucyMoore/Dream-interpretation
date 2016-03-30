@@ -2,6 +2,7 @@ var $ = require('jquery')
 var request = require('superagent')
 
 $(document).ready(function(){
+  var alphabetPage = false
 //user interaction:
 
   //when focus moves from textfield 
@@ -52,7 +53,7 @@ $( "a" ).click(function( event ) {
 function getAlphabet(){
   $('h3').html('search for elements alphabeticaly')
   $('a').html('go back')
-
+  alphabetPage = true
   request
   .get('api/v1/dreams/all')
   .end(function(err, res){
@@ -76,7 +77,6 @@ function getAlphabet(){
         }
       }
     }
-
 
       // for(var i=0; i<elementsArr.length; i++){
       //   // var arr = elementsArr.filter(function(e){
