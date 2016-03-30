@@ -5,6 +5,7 @@ var bodyParser = require('body-parser')
 var request = require('superagent')
 var dotenv = require('dotenv')
 var sqlite = require('sqlite3');
+var knexConfig = require('./DB/knexfile');
 //one global variable
 var fileObject
 
@@ -25,13 +26,7 @@ var port = server.address().port;
 });
 
 // set up database
-var knex = require('knex') ({
-  client: 'sqlite3',
-  connection: {
-    filename: './DB/dev.sqlite3'
-  },
-  useNullAsDefault: true
-})
+var knex = require('knex') (knexConfig[process.env.NODE_ENV])
 
 var db = require('./DB/DB.js')(knex)
 

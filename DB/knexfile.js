@@ -2,11 +2,14 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './dev.sqlite3'
+      filename: './DB/dev.sqlite3'
     },
     useNullAsDefault: true
   },
 
+  production: process.env.DATABASE_URL || {
+  
+  },
   // the directory your migration files are located in
   directory: __dirname + '/migrations',
 
