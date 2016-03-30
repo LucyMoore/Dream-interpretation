@@ -8,7 +8,7 @@ In the browser the user can enter a basic theme/element from their dream, into t
 
 ##Design outline
 
-![digram](img/diagram.jpg)
+![digram](client/img/diagram.jpg)
 
 The client takes user entered data from a browser set up, hands it over to the server.  The server then uses that data to perform operations on a database to retreive more data and then returns it to the client, the client then displays it to  a browser
 
