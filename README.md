@@ -42,11 +42,11 @@ The skeleton is set up in HTML and the client uses hyper text to display diffren
 
 home page
 
-![wireframe](img/wireframe.png)
+![wireframe](client/img/wireframe.png)
 
 seach by category page 
 
-![wireframe](img/wireframe2.png)
+![wireframe](client/img/wireframe2.png)
 
 
 ##Stretch Elements
