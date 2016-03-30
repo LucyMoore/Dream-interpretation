@@ -56,17 +56,37 @@ function getAlphabet(){
     var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
     var response = res
     var elementsArr =[]
-    var analysisArr = []
     for(var i=0; i<res.body.length; i++){
-      elementsArr.push(res.body[i].element)
-      analysisArr.push(res.body[i].analysis)}
-    console.log(elementsArr, analysisArr)
+      elementsArr.push([res.body[i].element,res.body[i].analysis])
+    }
+    for(var i=0; i<alphabet.length; i++){
+       $('#display').append('<div id='+alphabet[i]+'></div>')
+    }
+    for(var i=0; i<alphabet.length; i++){
+      $('#' + alphabet[i]).html('<h2>'+alphabet[i].toUpperCase()+'<h2>')
+    }
+    for (var j = 0; j < alphabet.length; j++) {
+      for (var i = 0; i <elementsArr.length; i++) {
+        var mesure = elementsArr[i][0].charAt(0)
+        if(mesure === alphabet[j]){
+          $('#'+alphabet[j]).append('<p><strong>'+elementsArr[i][0]+ '</strong></p>'+'<p>'+elementsArr[i][1]+'</p>')
+        }
+      }
+    }
 
-     for(var i=0; i<alphabet.length; i++)
-       $('#display').append('<h2>'+alphabet[i]+'</h2>')
+
+      // for(var i=0; i<elementsArr.length; i++){
+      //   // var arr = elementsArr.filter(function(e){
+      //   //   $('#' + alphabet[i]).append(e)
+      //   // })
+
+      // }
+    
+    
+
   })
-}
 
+}
 
 //send request to server endpoint to return item from database
 function getAnalysis(search, num){
