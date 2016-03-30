@@ -12,7 +12,7 @@ var fileObject
 dotenv.load()
 
 // set the port to run on
-app.set('port', 3000);
+app.set('port', process.env.PORT || 3000);
 
 //set body parser to json
 app.use(bodyParser.json());
@@ -26,6 +26,7 @@ var port = server.address().port;
 });
 
 // set up database
+console.log(process.env.NODE_ENV);
 var knex = require('knex') (knexConfig[process.env.NODE_ENV])
 
 var db = require('./DB/DB.js')(knex)
