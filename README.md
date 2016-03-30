@@ -18,16 +18,19 @@ The client takes user entered data from a browser set up, hands it over to the s
 
 ####return dream analysis from a database (json file)
 
-GET /dreams
+GET /api/v1/dreams
 
 Using a query string obtained from the user input, the GET method will return a dream analysis stored in the json file 
 
 
 #### search catagories of dream elements
 
-GET /dreams/catagory\
+GET /api/v1/dreams/all
 
 select a catagorie of elements by letter and review the analysis
+
+POST /api/v1/dreams
+if an item is not in the database the user can request it be added, there is a request button the becomes visible when appropriate and fires a function that writes the request to a json file 
 
 ###APIs
 I will be using an API for an image site such as flickr, to import a picture to the browser when user input is found
