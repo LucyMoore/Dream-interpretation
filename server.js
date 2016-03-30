@@ -22,7 +22,6 @@ app.use(express.static('client'))
 //set up listeners
 var server = app.listen(app.get('port'), function() {
 var port = server.address().port;
-  console.log('running on ' + port);
 });
 
 // set up database
@@ -68,8 +67,6 @@ app.post('/api/v1/dreams',function(req, res){
   var textToWrite = JSON.stringify(req.body)
   fs.readFile('requests.json', 'utf8', function(err, data){
     fileObject = data + " " + textToWrite
-    console.log( fileObject)
-  
     fs.writeFile('requests.json', fileObject , function(err, data){
     })
   })

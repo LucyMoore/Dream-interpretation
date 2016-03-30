@@ -103,7 +103,6 @@ function getAnalysis(search, num){
     .query({search})
     .end(function(err, res){
       var dreamData = res.body[0]
-      console.log(dreamData,'res client')
       //var value = res.body
       if(dreamData === undefined){
         $(returnTo).html("Sorry we dont have an analysis for that.<br> Click the request button and we will add this element to our database.")

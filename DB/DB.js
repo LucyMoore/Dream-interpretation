@@ -12,7 +12,6 @@ module.exports = function (knex) {
     getDbAll: function (callback){
     	knex.raw('SELECT * FROM dreams')
     	.then(function(resp){
-    		console.log(resp)
     		callback(null, resp)
     	})
     }
