@@ -45,9 +45,13 @@ $(document).ready(function(){
    //search by aphabet
 $( "a" ).click(function( event ) {
   event.preventDefault()
+  if(alphabetPage===false){
   $('#display').children().remove()
   $('#display').append($("<div id='alphabetContent'/>" ))
     getAlphabet()
+  } else{
+    location.reload()
+  }
 })
 
 function getAlphabet(){
