@@ -8,7 +8,7 @@ In the browser the user can enter a basic theme/element from their dream, into t
 
 ##Design outline
 
-![digram](img/diagram.jpg)
+![digram](client/img/diagram.jpg)
 
 The client takes user entered data from a browser set up, hands it over to the server.  The server then uses that data to perform operations on a database to retreive more data and then returns it to the client, the client then displays it to  a browser
 
@@ -18,16 +18,19 @@ The client takes user entered data from a browser set up, hands it over to the s
 
 ####return dream analysis from a database (json file)
 
-GET /dreams
+GET /api/v1/dreams
 
 Using a query string obtained from the user input, the GET method will return a dream analysis stored in the json file 
 
 
 #### search catagories of dream elements
 
-GET /dreams/catagory\
+GET /api/v1/dreams/all
 
 select a catagorie of elements by letter and review the analysis
+
+POST /api/v1/dreams
+if an item is not in the database the user can request it be added, there is a request button the becomes visible when appropriate and fires a function that writes the request to a json file 
 
 ###APIs
 I will be using an API for an image site such as flickr, to import a picture to the browser when user input is found
@@ -42,11 +45,11 @@ The skeleton is set up in HTML and the client uses hyper text to display diffren
 
 home page
 
-![wireframe](img/wireframe.png)
+![wireframe](client/img/wireframe.png)
 
 seach by category page 
 
-![wireframe](img/wireframe2.png)
+![wireframe](client/img/wireframe2.png)
 
 
 ##Stretch Elements
